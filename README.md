@@ -1,12 +1,15 @@
+[PLAY STARFIELD SHOOTER HERE](https://hunterwarburton.github.io/Website/Starfield%20Shooter/StarField.html)
+
 > Version 0.4
 
 Starfield Shooter is a practice project made in javascript. It is meant to be an in-browser playable game reminescent of Galaga, 1942, and other shmup or bullet-hell games.
 
-## Documentation
-
-Learn how to get started with Font Awesome and then dive deeper into other and advanced topics:
-
-[Docs for version 6](https://fontawesome.com/docs)
+##Features/Learning Purposes
+Starfield Shooter began as a simple attempt to create parallax scrolling with dots moving down the screen at different speeds. The result of that can still be seen in the background of this game.
+The game has expanded as practice with javascript coding.
+The player controls a ship with the mouse and can press the spacebar to activate a superweapon (*only partially implemented*)
+Hitting an enemy with a projectile with earn a point, while an enemy hitting the player with their projectiles deducts a point from the score.
+Collect powerups to change weapons.
 
 ## Change log
 
