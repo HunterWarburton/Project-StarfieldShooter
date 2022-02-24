@@ -1,6 +1,7 @@
 [PLAY STARFIELD SHOOTER HERE](https://hunterwarburton.github.io/Website/Starfield%20Shooter/StarField.html)
 
-> Version 0.4
+> Live Version Branch 0.2
+> Repository Version 0.4
 
 Starfield Shooter is a practice project made in javascript. It is meant to be an in-browser playable game reminescent of Galaga, 1942, and other shmup or bullet-hell games.
 
@@ -13,22 +14,22 @@ Collect powerups to change weapons.
 
 ## Change log
 
-V 0.04
+V 0.4
 * Added spacebar detection
 * Made code to make spritesheets work correctly
 * added Spritesheet for playership, allowing for transformation
 * changed powerup ability to randomly change playerWeapon
 
-V 0.03
+V 0.3
 * Added 5 different bullet types for player to shoot
 * Made Spritesheet for laser weapon
 * Made UI symbol for which weapon player is using
 
-V 0.02
+V 0.2
 * Made 5 different enemy types
 * created method for randomly spawning preset waves of different enemies
 
-V 0.01
+V 0.1
 * Created playable prototype using new methods canvas, drawarc
 
 ## Team
