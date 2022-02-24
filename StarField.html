@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {text-align: center;}
+    h1   {text-align: center;}
+    </style>
+<head>
+    <meta charset="utf-8" />
+    <title>Starfield Space Shooter - Warburton</title>
+
+    <h1>Starfield Space Shooter</h1>
+    <style>
+      * { padding: 0; margin: 0; }
+      canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="480" height="320"></canvas>
+<div style="display:none;">
+    <img id="playerShip"
+         src="./playerShipImageSheet.png"
+         width="139" height="116">
+  </div>
+
+  <div style="display:none;">
+    <img id="seekerEnemy"
+         src="./shipSeeker.png"
+         width="20" height="20">
+  </div>
+  <div style="display:none;">
+    <img id="tankEnemy"
+         src="./shipTank.png"
+         width="100" height="100">
+  </div>
+  <div style="display:none;">
+    <img id="bouncerEnemy"
+         src="./shipBouncer.png"
+         width="60" height="60">
+  </div>
+  <div style="display:none;">
+    <img id="invaderEnemy"
+         src="./shipInvader.png"
+         width="50" height="50">
+  </div>
+  <div style="display:none;">
+    <img id="bossEnemy"
+         src="./shipBoss.png"
+         width="300" height="300">
+  </div>
+
+  <div style="display:none;">
+    <img id="bulletGatling"
+         src="./bullets/bulletGatling.png"
+         width="40" height="40">
+  </div>
+  <div style="display:none;">
+    <img id="bulletSpread"
+         src="./bullets/bulletSpread.png"
+         width="40" height="40">
+  </div>
+  <div style="display:none;">
+    <img id="bulletPlasma"
+         src="./bullets/bulletPlasma.png"
+         width="50" height="100">
+  </div>
+  <div style="display:none;">
+    <img id="bulletRocket"
+         src="./bullets/bulletRocket.png"
+         width="75" height="150">
+  </div>
+  <div style="display:none;">
+    <img id="bulletFlames"
+         src="./bullets/bulletFlames.png"
+         width="50" height="100">
+  </div>
+  <div style="display:none;">
+    <img id="bulletLaser"
+         src="./bullets/bulletLaser_Sheet.png"
+         width="100" height="2000">
+  </div>
+
+  <div style="display:none;">
+    <img id="iconGatling"
+         src="./icons/iconGatling.png"
+         width="80" height="80">
+  </div>
+  <div style="display:none;">
+    <img id="iconSpread"
+         src="./icons/iconSpread.png"
+         width="80" height="80">
+  </div>
+  <div style="display:none;">
+    <img id="iconPlasma"
+         src="./icons/iconPlasma.png"
+         width="80" height="80">
+  </div>
+  <div style="display:none;">
+    <img id="iconRocket"
+         src="./icons/iconRocket.png"
+         width="80" height="80">
+  </div>
+  <div style="display:none;">
+    <img id="iconFlames"
+         src="./icons/iconFlames.png"
+         width="80" height="80">
+  </div>
+  <div style="display:none;">
+    <img id="iconLaser"
+         src="./icons/iconLaser.png"
+         width="80" height="80">
+  </div>
+
+  <div id="score">Initial Score Text</div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+  <script src="ParallaxStars.js"></script>
+  <script src="PlayerBullets.js"></script>
+  <script src="PlayerShip.js"></script>
+  <script src="UI.js"></script>        
+  <!---<script src="PlayerShip.js"></script>    --->
+
+</body>
+</html>
+
+
+
+   
+       
