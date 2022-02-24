@@ -1,6 +1,7 @@
 [PLAY STARFIELD SHOOTER HERE](https://hunterwarburton.github.io/Website/Starfield%20Shooter/StarField.html)
 
 > Live Version Branch 0.2
+
 > Repository Version 0.4
 
 Starfield Shooter is a practice project made in javascript. It is meant to be an in-browser playable game reminescent of Galaga, 1942, and other shmup or bullet-hell games.
