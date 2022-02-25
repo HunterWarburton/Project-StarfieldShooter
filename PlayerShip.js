@@ -1,6 +1,6 @@
 const playerShipImage = document.getElementById('playerShip');
 
-let playerShip = {
+var playerShip = {
     height : 80,
     width : 80,
     image : playerShipImage,

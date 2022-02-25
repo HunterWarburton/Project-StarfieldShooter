@@ -1,8 +1,8 @@
 [PLAY STARFIELD SHOOTER HERE](https://hunterwarburton.github.io/Website/Starfield%20Shooter/StarField.html)
 
-> Live Version Branch 0.2
+> Live Version Branch 0.5
 
-> Repository Version 0.4
+> Repository Version 0.5
 
 Starfield Shooter is a practice project made in javascript. It is meant to be an in-browser playable game reminescent of Galaga, 1942, and other shmup or bullet-hell games.
 
@@ -14,6 +14,10 @@ Hitting an enemy with a projectile with earn a point, while an enemy hitting the
 Collect powerups to change weapons.
 
 ## Change log
+V 0.5
+* Superweapon spritesheet created and functioning (no damage yet)
+* Changed powerup spritesheet
+* outlined new powerups for future implementation
 
 V 0.4
 * Added spacebar detection

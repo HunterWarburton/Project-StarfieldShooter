@@ -28,6 +28,7 @@ var shootTimerResetti = 20;
     const bulletImageRocket = document.getElementById('bulletRocket');
     const bulletImageFlames = document.getElementById('bulletFlames');
     const bulletImageLaser = document.getElementById('bulletLaser');
+    const bulletImageBombLaser = document.getElementById('bombLaser');
 
     let playerBullet = {
         posX : 0,
@@ -97,9 +98,42 @@ var shootTimerResetti = 20;
         frameCountDelay : 0//delay between changing frames
     }, playerBullet);
 
+    let bombLaserBullet = Object.assign({
+        height : 831,
+        width : 208,
+        hp : 255,
+        damage : 1,
+        speed: 0,
+        lifespan : 93,
+        image : bulletImageBombLaser,
+        //Section for sprite sheet
+        sheetWidth : 208,//size of individual frame
+        sheetHeight : 831,
+        sheetFrameTotal : 31,//total number of frames start at 0
+        currentSheetFrame : 0,//var for which frame is displayed
+        frameCountDelay : 0//delay between changing frames
+    }, playerBullet);
+
 function shootPlayerBullets(){
     //check what the player's weapon is
     //then fire the specific bullets
+    if (playerShip.activatingBomb === 2) {
+        //MAKE BOMB LASER!!!!!!
+        if (shootTimer == 0) {
+            let babyBullet = Object.create(bombLaserBullet);
+            //Plasma Shoots straight
+            babyBullet.direction = 0;
+            //laser stays in place
+            babyBullet.speedX = 0
+            babyBullet.speedY = babyBullet.speed*Math.cos(babyBullet.direction)
+            //align bullet to start at mouse
+            babyBullet.posX=mouseX;
+            babyBullet.posY=mouseY;
+
+            playerbulletsArray.push(babyBullet);
+            shootTimer = babyBullet.sheetFrameTotal*3;//RESET Shoot timer
+        } else {shootTimer--;}
+    } else if (playerShip.activatingBomb != 1) {
     switch (playerWeapon) {
         case 'gatling':
             if (shootTimer == 0) {
@@ -177,22 +211,20 @@ function shootPlayerBullets(){
                 shootTimer = babyBullet.lifespan*2;//RESET Shoot timer
             } else {shootTimer--;}
         break;
-
+        }
     }
     //console.log("spawned a gun bullet for the player");
 }
 
 function movePlayerBullets(){
     playerbulletsArray.forEach((bullet) => {
-        if (bullet.image == bulletImageLaser) {
+        if (bullet.image == bulletImageLaser || bullet.image === bulletImageBombLaser) {
             bullet.posY = mouseY;
             bullet.posX = mouseX;
         } else {
             bullet.posY -= bullet.speedY;
             bullet.posX -= bullet.speedX;
         }
-        
-
         //check and erase bullet if off any of 4 sides
         if (bullet.posY > canvas.height+5 || bullet.posY < -5){
             bullet.lifespan = 0;
@@ -214,6 +246,8 @@ function drawPlayerBullets(){
             ctx.rotate(-bullet.direction);
             if (bullet.image == bulletImageLaser) {
                 sheetStep(bullet);
+            } else if (bullet.image === bulletImageBombLaser) {
+                sheetStepBombLaser(bullet);
             } else {
                 ctx.drawImage(bullet.image, -(bullet.width/2), -(bullet.height/2), bullet.width, bullet.height);
             }
@@ -260,9 +294,7 @@ function playerBulletCollision(bullet) {
     });
 }
 
-
 //SpriteSheet drawer
-
 function drawBulletSheet(bullet) {
     let xFrame = 0;
     switch (bullet.currentSheetFrame) {
@@ -314,4 +346,31 @@ function sheetStep(bullet) {
             bullet.currentSheetFrame = 0;
         }
     }
+}
+
+function sheetStepBombLaser(bullet) {
+    drawBombLaserSheet(bullet);
+  
+    bullet.frameCountDelay++;
+    if (bullet.frameCountDelay >= 3) {
+        bullet.frameCountDelay = 0;
+        //advance this things frame for next draw
+        bullet.currentSheetFrame++;
+        
+        //if we moved past the last frame count, reset it
+        if (bullet.currentSheetFrame > bullet.sheetFrameTotal) {
+            bullet.currentSheetFrame = 0;
+        }
+    }
+}
+function drawBombLaserSheet(bullet) {
+    let xFrame = bullet.currentSheetFrame;
+    console.log(bullet.currentSheetFrame);
+    
+    ctx.drawImage(bullet.image,
+        xFrame * bullet.sheetWidth,//Sheet X position
+        0 * bullet.sheetHeight,//sheet Y position
+        bullet.sheetWidth, bullet.sheetHeight,//Sheet size of frame
+        -(bullet.width*1.75)/2, -(bullet.height)-95,//+75,//canvas position
+        bullet.width*1.75, bullet.height*1.25);//render size of bullet
 }
