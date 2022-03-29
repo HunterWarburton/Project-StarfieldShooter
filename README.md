@@ -1,4 +1,4 @@
-[PLAY STARFIELD SHOOTER HERE](https://hunterwarburton.github.io/Website/Starfield%20Shooter/StarField.html)
+[PLAY STARFIELD SHOOTER HERE](https://hunterwarburton.github.io/StarfieldShooter/StarField.html)
 
 > Live Version Branch 0.5
 
